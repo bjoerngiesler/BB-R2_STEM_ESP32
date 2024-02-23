@@ -4,6 +4,8 @@
 #include <DabbleESP32.h>
 #include <DFRobotDFPlayerMini.h>
 
+static const char* droidName = "BB-R2 #8";
+
 // This struct describes properties for a servo.
 typedef struct {
   unsigned int pin;              // The hardware pin the servo is connected to
@@ -46,7 +48,7 @@ void setup() {
   Serial.begin(2000000);
   Serial.println("BB-R2 ESP32, 2023 Bjoern Giesler");
 
-  Dabble.begin("BB-R2");
+  Dabble.begin(droidName);
 
   // Initialize sound module
   dfpSerial.begin(9600, SERIAL_8N1, RX, TX);
